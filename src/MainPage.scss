@@ -1,0 +1,56 @@
+$dark-blue: #354152;
+$mint: aquamarine;
+$green: #378f7b;
+$gray: rgb(206, 212, 218);
+
+body {
+    background-color: $dark-blue  !important;
+}
+
+.logo {
+    font-size: 20vh;
+    color: $mint;
+}
+
+.all-items {
+    padding-top: 10vh;
+    padding-bottom: 50px;
+}
+
+input {
+    color:white !important;
+    background-color: rgba(255, 255, 255, 0.161) !important;
+}
+
+input:hover{
+    box-shadow: 0 0 5pt 0.1pt #D3D3D3 !important;
+  }
+  input:focus {
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3 !important;
+    outline-width: 0px !important;
+  }
+
+label {
+    color: rgba(176, 171, 160, 0.645);
+}
+
+.btn-outline-primary {
+    color: $gray  !important;
+    border-color: $gray  !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    background-color: $green  !important;
+}
+
+.clicked {
+    background-color: $green  !important;
+}
+
+.btn-primary {
+    color: #354152 !important;
+    background-color: $mint  !important;
+    border-color: $green  !important;
+}

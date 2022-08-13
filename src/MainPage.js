@@ -1,4 +1,4 @@
-import './MainPage.css';
+import './MainPage.scss';
 import React from 'react';
 
 class MainPage extends React.Component {
@@ -23,9 +23,11 @@ class MainPage extends React.Component {
         switch (inputID) {
             case 'q2-txt':
                 this.setState({ showP2: !this.state.showP2 });
+                document.getElementById('q2-btn').classList.toggle('clicked');
                 break;
             case 'q3-txt':
                 this.setState({ showP3: !this.state.showP3 });
+                document.getElementById('q3-btn').classList.toggle('clicked');
                 break;
             default:
                 break;
@@ -59,11 +61,11 @@ class MainPage extends React.Component {
             return (
                 <div className='all-items'>
                     <div className='text-center'>
-                    <i className="bi bi-lock-fill logo"></i>
+                        <i className="bi bi-lock-fill logo"></i>
                     </div>
-                    
-                    
-                    <div className="vstack gap-2 col-11 col-md-5 mx-auto my-auto">
+
+
+                    <div className="vstack gap-4 col-11 col-md-5 mx-auto my-auto">
                         <div className="form-floating">
                             <input type="text" className="form-control" id="username-txt" placeholder="Username"></input>
                             <label htmlFor="username-txt">Username</label>
@@ -74,7 +76,7 @@ class MainPage extends React.Component {
                                 <input type="password" className="form-control" id="q2-txt" placeholder="Password_Q2"></input>
                                 <label htmlFor="q2-txt">Password_Q2</label>
                             </div>
-                            <button className="btn btn-outline-primary" type="button" id="q2-button"
+                            <button className="btn btn-outline-primary" type="button" id="q2-btn"
                                 onClick={() => this.togglePasswordShow('q2-txt')}>
                                 {this.state.showP2 ?
                                     <i className="bi bi-eye-fill"></i> :
@@ -87,7 +89,7 @@ class MainPage extends React.Component {
                                 <input type="password" className="form-control" id="q3-txt" placeholder="Password_Q3"></input>
                                 <label htmlFor="q3-txt">Password_Q3</label>
                             </div>
-                            <button className="btn btn-outline-primary" type="button" id="q3-button"
+                            <button className="btn btn-outline-primary" type="button" id="q3-btn"
                                 onClick={() => this.togglePasswordShow('q3-txt')}>
                                 {this.state.showP3 ?
                                     <i className="bi bi-eye-fill"></i> :
