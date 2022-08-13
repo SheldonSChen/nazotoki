@@ -6,8 +6,30 @@ class MainPage extends React.Component {
         super(props);
         this.state = {
             solved: false,
+            showP2: false,
+            showP3: false,
             teamID: null
         };
+    }
+
+    togglePasswordShow = (inputID) => {
+        var input = document.getElementById(inputID);
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+
+        switch (inputID) {
+            case 'q2-txt':
+                this.setState({ showP2: !this.state.showP2 });
+                break;
+            case 'q3-txt':
+                this.setState({ showP3: !this.state.showP3 });
+                break;
+            default:
+                break;
+        }
     }
 
     checkPlayerAnswers = () => {
@@ -36,33 +58,49 @@ class MainPage extends React.Component {
         } else {
             return (
                 <div>
-                    <div class="box">
-                        <div id='title'>
-                            <h3>SUMMER BOOST 2022</h3>
-                            <h3>NAZOTOKI LOGIN</h3>
+                    <form class="vstack gap-2 col-11 mx-auto">
+
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="username-txt" placeholder="Username"></input>
+                            <label for="username-txt">Username</label>
                         </div>
 
-                        <div id='username'>
-                            <input type='text' id='username-txt' placeholder='username'></input>
+                        <div class="input-group">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="q2-txt" placeholder="Password_Q2"></input>
+                                <label for="q2-txt">Password_Q2</label>
+                            </div>
+                            <button class="btn btn-outline-primary" type="button" id="q2-button"
+                                onClick={() => this.togglePasswordShow('q2-txt')}>
+                                {this.state.showP2 ?
+                                    <i className="bi bi-eye-fill"></i> :
+                                    <i className="bi bi-eye-slash"></i>}
+                            </button>
                         </div>
 
-                        <div id='q2'>
-                            <input type='password' id='q2-txt' placeholder='password_q2'></input>
-                        </div>
-
-                        <div id='q3'>
-                            <input type='password' id='q3-txt' placeholder='password_q3'></input>
+                        <div class="input-group">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="q3-txt" placeholder="Password_Q3"></input>
+                                <label for="q3-txt">Password_Q3</label>
+                            </div>
+                            <button class="btn btn-outline-primary" type="button" id="q3-button"
+                                onClick={() => this.togglePasswordShow('q3-txt')}>
+                                {this.state.showP3 ?
+                                    <i className="bi bi-eye-fill"></i> :
+                                    <i className="bi bi-eye-slash"></i>}
+                            </button>
                         </div>
 
                         <div id='button'>
-                            <button type='button' id='player-answer-btn'
+                            <button type='button' id='player-answer-btn' class="btn btn-primary"
                                 onClick={() => this.checkPlayerAnswers()}>
                                 <span>LOGIN</span>
                             </button>
                         </div>
                         <br />
-                    </div>
+                    </form>
                 </div>
+
             );
         }
     }
