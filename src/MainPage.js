@@ -57,20 +57,24 @@ class MainPage extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <form class="vstack gap-2 col-11 mx-auto">
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="username-txt" placeholder="Username"></input>
-                            <label for="username-txt">Username</label>
+                <div className='all-items'>
+                    <div className='text-center'>
+                    <i className="bi bi-lock-fill logo"></i>
+                    </div>
+                    
+                    
+                    <div className="vstack gap-2 col-11 col-md-5 mx-auto my-auto">
+                        <div className="form-floating">
+                            <input type="text" className="form-control" id="username-txt" placeholder="Username"></input>
+                            <label htmlFor="username-txt">Username</label>
                         </div>
 
-                        <div class="input-group">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="q2-txt" placeholder="Password_Q2"></input>
-                                <label for="q2-txt">Password_Q2</label>
+                        <div className="input-group">
+                            <div className="form-floating">
+                                <input type="password" className="form-control" id="q2-txt" placeholder="Password_Q2"></input>
+                                <label htmlFor="q2-txt">Password_Q2</label>
                             </div>
-                            <button class="btn btn-outline-primary" type="button" id="q2-button"
+                            <button className="btn btn-outline-primary" type="button" id="q2-button"
                                 onClick={() => this.togglePasswordShow('q2-txt')}>
                                 {this.state.showP2 ?
                                     <i className="bi bi-eye-fill"></i> :
@@ -78,12 +82,12 @@ class MainPage extends React.Component {
                             </button>
                         </div>
 
-                        <div class="input-group">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="q3-txt" placeholder="Password_Q3"></input>
-                                <label for="q3-txt">Password_Q3</label>
+                        <div className="input-group">
+                            <div className="form-floating">
+                                <input type="password" className="form-control" id="q3-txt" placeholder="Password_Q3"></input>
+                                <label htmlFor="q3-txt">Password_Q3</label>
                             </div>
-                            <button class="btn btn-outline-primary" type="button" id="q3-button"
+                            <button className="btn btn-outline-primary" type="button" id="q3-button"
                                 onClick={() => this.togglePasswordShow('q3-txt')}>
                                 {this.state.showP3 ?
                                     <i className="bi bi-eye-fill"></i> :
@@ -91,14 +95,11 @@ class MainPage extends React.Component {
                             </button>
                         </div>
 
-                        <div id='button'>
-                            <button type='button' id='player-answer-btn' class="btn btn-primary"
-                                onClick={() => this.checkPlayerAnswers()}>
-                                <span>LOGIN</span>
-                            </button>
-                        </div>
-                        <br />
-                    </form>
+                        <button type='button' id='player-answer-btn' className="btn btn-primary"
+                            onClick={() => this.checkPlayerAnswers()}>
+                            LOGIN
+                        </button>
+                    </div>
                 </div>
 
             );
