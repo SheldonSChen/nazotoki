@@ -6,6 +6,7 @@ class MainPage extends React.Component {
         super(props);
         this.state = {
             solved: false,
+            showMap: false,
             showP2: false,
             showP3: false,
             teamID: null
@@ -51,7 +52,7 @@ class MainPage extends React.Component {
     }
 
     render() {
-        if (this.state.solved) {
+        if (this.state.showMap) {
             return (
                 <div>
                     <h1>SUMMER BOOST 2022 NAZOTOKI</h1>
@@ -59,7 +60,7 @@ class MainPage extends React.Component {
             );
         } else {
             return (
-                <div className='all-items'>
+                <div className={`all-items ${this.state.solved ? 'fade-out' : 'fade-in'}`}>
                     <div className='text-center'>
                         <i className="bi bi-lock-fill logo"></i>
                     </div>

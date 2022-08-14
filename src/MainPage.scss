@@ -17,6 +17,32 @@ body {
     padding-bottom: 50px;
 }
 
+.fade-in {
+    animation: fadein 1.5s ease-in forwards;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeout 1.5s ease-out forwards;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 input {
     color:white !important;
     background-color: rgba(255, 255, 255, 0.161) !important;
