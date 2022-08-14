@@ -1,5 +1,6 @@
 import './MainPage.scss';
 import React from 'react';
+import MapPage from './MapPage';
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -48,15 +49,14 @@ class MainPage extends React.Component {
             alert('LOGIN FAILED');
         } else {
             this.setState({ solved: true, teamID: username });
+            setTimeout(() => this.setState({showMap: true}), 1550);
         }
     }
 
     render() {
         if (this.state.showMap) {
             return (
-                <div>
-                    <h1>SUMMER BOOST 2022 NAZOTOKI</h1>
-                </div>
+                <MapPage teamID={this.state.teamID} ></MapPage>
             );
         } else {
             return (

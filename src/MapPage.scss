@@ -1,6 +1,35 @@
+.mp {
+    opacity: 0;
+}
+
+.mp:nth-child(1) {
+    animation-delay: 0s;
+}
+.mp:nth-child(2) {
+    animation-delay: 2s;
+}
+.mp:nth-child(3) {
+    animation-delay: 4s;
+}
+.mp:nth-child(4) {
+    animation-delay: 6s;
+}
+
 h1 {
     color: white;
-    padding-bottom: 4vh;
+    margin-bottom: 4vh;
+}
+
+.blue {
+    color: rgb(129, 179, 254);
+}
+
+.green {
+    color: rgb(121, 255, 123);
+}
+
+.red {
+    color: rgb(254, 129, 142);
 }
 
 .map-page {
@@ -8,22 +37,17 @@ h1 {
     padding-bottom: 50px;
     padding-left: 30px;
     padding-right: 30px;
-
     text-align: center;
 }
 
-@media screen and (orientation: portrait) {
-    img {
-        width: 90%;
-    }
+.row {
+    margin-top: 5vh !important;
 }
 
-@media screen and (orientation: landscape) {
-    img {
-        width: 30%;
-        // display: block;
-        // margin-left: auto;
-        // margin-right: auto;
-        // margin-bottom: 5vmin;
-    }
+img {
+    margin-bottom: 20px;
+}
+
+.ignore {
+    opacity: 0.3;
 }
