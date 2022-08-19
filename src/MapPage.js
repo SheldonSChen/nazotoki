@@ -50,6 +50,7 @@ class MapPage extends React.Component {
                 <h1 className='mp fade-in'>Welcome {teamID}.</h1>
                 <h1 className='mp fade-in'> Here is your next mission.</h1>
                 <h1 className='mp fade-in'>Go to the {this.getColor(teamID)} icons.</h1>
+                <h1 className='mp fade-in'>Head to room 2 to get your questions.</h1>               
                 <div className="row mp fade-in">
                     <img src={map2F} className={this.getImgClass('2F', teamID)} alt="2F 地図"></img>
                     <img src={map3F} className={this.getImgClass('3F', teamID)} alt="3F 地図"></img>
